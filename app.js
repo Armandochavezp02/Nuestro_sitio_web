@@ -7,7 +7,7 @@ console.log("Servidor ejecutandose...");
 
 http.createServer((request, response) => {
   console.log(request.url);
-  const file = request.url == '/' ? "./index.html" : `.${request.url}`;
+  const file = request.url == '/' ? "./WWW/index.html" : `./${request.url}`;
 
   fs.readFile(file, (error, data) => {
     if (error) {
