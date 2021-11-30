@@ -1,1 +1,6 @@
-AQUI VA EL FORMULARIO DE CONTACTO QUE SE ALMACENARA EN EL SERVIDOR
+
+Nombre: Alan Said Sanchez Sausameda
+Telefono: 6391234567
+Dirección: Av Siempre Viva #12
+Email: a307730@uach.mx
+Nombre: Armando Chávez Pérez
