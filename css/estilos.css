@@ -24,18 +24,18 @@
 }
 
 .header {
-    padding: 80px; /* some padding */
+    padding: 80px; 
     text-align: left;
     vertical-align: top;
     background-image: url('../imagenes/carRental.jpg');
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-attachment: fixed;
-    color: white; /* white text color */
+    color: white; 
     text-shadow: black 0px 0px 10px;
   }
   
-  /* Increase the font size of the <h1> element */
+
   .header h1 {
     font-size: 80px;
   }
@@ -44,31 +44,27 @@
       font-size: 40px;
   }
 
-             /* Style the top navigation bar */
+ /* barra de navegacion */
 .navbar {
-    overflow: hidden; /* Hide overflow */
-    background-color: #333; /* Dark background color */
+    overflow: hidden; 
+    background-color: #333; 
   }
   
-  /* Style the navigation bar links */
+  /* links de la barra de navegacion */
   .navbar a {
-    float: left; /* Make sure that the links stay side-by-side */
-    display: block; /* Change the display to block, for responsive reasons (see below) */
-    color: white; /* White text color */
-    text-align: center; /* Center the text */
-    padding: 14px 20px; /* Add some padding */
-    text-decoration: none; /* Remove underline */
+    float: left; 
+    display: block; 
+    color: white; 
+    text-align: center; 
+    padding: 14px 20px; 
+    text-decoration: none; 
   }
   
-  /* Right-aligned link */
-  .navbar a.right {
-    float: right; /* Float a link to the right */
-  }
   
-  /* Change color on hover/mouse-over */
+  /* cambio de color cuando se seleccione*/
   .navbar a:hover {
-    background-color: #ddd; /* Grey background color */
-    color: black; /* Black text color */
+    background-color: #ddd; 
+    color: black; 
   }
 
 
@@ -79,7 +75,6 @@
     box-sizing: border-box;
   }
   
-  /* Position the image container (needed to position the left and right arrows) */
   .container {
     position: relative;
     max-width: 1000px;
@@ -87,17 +82,15 @@
     margin: auto;
   }
   
-  /* Hide the images by default */
   .mySlides {
     display: none;
   }
   
-  /* Add a pointer when hovering over the thumbnail images */
   .cursor {
     cursor: pointer;
   }
   
-  /* Next & previous buttons */
+  /* botones */
   .prev,
   .next {
     cursor: pointer;
@@ -114,28 +107,25 @@
     -webkit-user-select: none;
   }
   
-  /* Position the "next button" to the right */
   .next {
     right: 0;
     border-radius: 3px 0 0 3px;
   }
   
-  /* On hover, add a black background color with a little bit see-through */
   .prev:hover,
   .next:hover {
     background-color: rgba(0, 0, 0, 0.8);
   }
   
-  /* Number text (1/3 etc) */
+  /* numeros (1/30) */
   .numbertext {
     color: #f2f2f2;
-    font-size: 12px;
+    font-size: 20px;
     padding: 8px 12px;
     position: absolute;
     top: 0;
   }
   
-  /* Container for image text */
   .caption-container {
     text-align: center;
     background-color: #222;
@@ -149,13 +139,11 @@
     clear: both;
   }
   
-  /* Six columns side by side */
   .column {
     float: left;
     width: 16.66%;
   }
   
-  /* Add a transparency effect for thumnbail images */
   .demo {
     opacity: 0.6;
   }
@@ -171,7 +159,7 @@
  
   /* css del footer */
   .footer {
-    padding: 20px; /* Some padding */
-    text-align: center; /* Center text*/
-    background: #ddd; /* Grey background */
+    padding: 20px; 
+    text-align: center; 
+    background: #ddd;
   }
