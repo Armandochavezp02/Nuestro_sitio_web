@@ -82,9 +82,9 @@ localhost:8888/
 ```
 ### Elaborado con:
 
-*[Atom]
-*[Node.js (para ejecutr el programa)]
-*[Nano]
+* [Atom]
+* [Node.js (para ejecutr el programa)]
+* [Nano]
 
 ## Authors:
 
