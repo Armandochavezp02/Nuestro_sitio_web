@@ -1,54 +1,83 @@
 const http = require('http'); //libreria de http
 const fs = require('fs'); //libreria de file system
-const path=require('path');
-  
+
 
 console.log("Servidor ejecutandose...");
-http.createServer((req, res) => {
 
-  console.log(`${req.method} solicita ${req.url}`);
 
-  if(req.url =='/'){
-    fs.readFile('./WWW/index.html', 'UTF-8',(err,html)=>{
-      res.writeHead(200,{'Content-Type':'text/html'});
-      res.end(html);
+http.createServer((request, response) => {
+  console.log(request.url);
+  const file = request.url == '/' ? "./index.html" : `.${request.url}`;
+
+  if (request.url == '/contactos.html') {
+    let data = "Estado de contacto";
+    fs.writeFile('./contacto.txt', data, (err) => {
+      if (err) throw err;
+    });
+  }
+  
+
+  fs.readFile(file, (error, data) => {
+    if (error) {
+      response.writeHead(404, {
+        "Content-Type": "text/plain"
       });
-      }else if(req.url.match(/.css$/)){
-          const reqPath=path.join(__dirname,'WWW',req.url);
-          const fileStream=fs.createReadStream(reqPath,'UTF-8');
-          res.writeHead(200 ,{'Content-Type':'text/css'});
-          fileStream.pipe(res);
-          
-        }else if(req.url.match(/.png$/)){
-          const reqPath=path.join(__dirname,'WWW',req.url);
-          const fileStream=fs.createReadStream(reqPath);
-          res.writeHead(200 ,{'Content-Type':'text/png'});
-          fileStream.pipe(res);
+      response.write("Not Found MADAFAKA");
+      response.end();
+    } else {
+      //si tenemos la cadena "hola.como estas" i hacemos un split de esta
+      //manera "hola.como estas".split(','); va a devolver un arreglo con dos
+      //pedazos: ["hola", "como estas"]. Si agregamos el .pop(): "como estas"
+      const extension = file.split('.').pop();
 
+      switch (extension) {
+        case 'txt':
+          response.writeHead(200, {
+            "Content-Type": "text/plain"
+          });
+          break;
 
-        }else if(req.url.match(/.jpg$/)){
-          const reqPath=path.join(__dirname,'WWW',req.url);
-          const fileStream=fs.createReadStream(reqPath);
-          res.writeHead(200 ,{'Content-Type':'text/jpg'});
-          fileStream.pipe(res);
-        }else if (req.url.match(/.txt$/)){
-          const reqPath=path.join(__dirname,'WWW',req.url);
-          const fileStream=fs.createReadStream(reqPath);
-          res.writeHead(200 ,{'Content-Type':'text/txt'});
-          fileStream.pipe(res);
-        }
-        else if(req.url.match(/.html$/)){
-          const reqPath=path.join(__dirname,'WWW',req.url);
-          const fileStream=fs.createReadStream(reqPath);
-          res.writeHead(200 ,{'Content-Type':'text/html'});
-          fileStream.pipe(res);
-        }
-        else {
-        res.writeHead(404,{'Content-Type':'text/plain'});
-        res.end('Server Error');
+        case 'html':
+          response.writeHead(200, {
+            "Content-Type": "text/html"
+          });
+          break;
 
+        case 'jpg':
+          response.writeHead(200, {
+            "Content-Type": "image/jpeg"
+          });
+          break;
+
+        case 'png':
+          response.writeHead(200, {
+            "Content-Type": "image/png"
+          });
+          break;
+
+        case 'css':
+          response.writeHead(200, {
+            "Content-Type": "text/css"
+          });
+          break;
+
+        case 'js':
+          response.writeHead(200, {
+            "Content-Type": "text/javascript"
+          });
+          break;
+
+        default:
+          response.writeHead(200, {
+            "Content-Type": "text/plain"
+          });
       }
+
+      response.write(data);
+      response.end();
+    }
+
+  });
 
 
 }).listen(8888);
-
