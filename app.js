@@ -2,6 +2,8 @@ const http = require('http'); //libreria de http
 const fs = require('fs'); //libreria de file system
 
 
+
+
 console.log("Servidor ejecutandose...");
 
 
@@ -13,9 +15,34 @@ http.createServer((request, response) => {
     let data = "Estado de contacto";
     fs.writeFile('./contacto.txt', data, (err) => {
       if (err) throw err;
+      console.log("Su formulario fue enviado exitosamente")
     });
+
+    /*
+    
+  if (request.method == 'POST') {
+      console.log('algo algo')
+      var body = '';
+
+      request.on('data', function (data) {
+          body += data;
+
+          // Too much POST data, kill the connection!
+          // 1e6 === 1 * Math.pow(10, 6) === 1 * 1000000 ~~~ 1MB
+          if (body.length > 1e6)
+              request.connection.destroy();
+      });
+
+      request.on('end', function () {
+          var post = qs.parse(body);
+          // use post['blah'], etc.
+      });
   }
-  
+
+    //*************************** */
+
+  }
+
 
   fs.readFile(file, (error, data) => {
     if (error) {

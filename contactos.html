@@ -22,26 +22,35 @@
     <div class="row">
       <div class="column">
         <img src="./imagenes/pixelCar_logo_color.png" style="width:100%">
+        <p>Nos ubicamos en:Circuito No. 1, Nuevo Campus Universitario, Apdo. postal 1552, Chihuahua, Chih., México. C.P. 31240. </p>
+        <p>Telefono: 6142236849, Email: pixel@car.com.mx</p>
       </div>
+
       <div class="column">
-        <form action="/action_page.php">
+        <!-- 
+        <form action="" method="post"> -->
+          <form method="POST"> 
           <label for="fname">Nombre</label>
-          <input type="text" id="fname" name="firstname" placeholder="Tu nombre..">
+          <input type="text" id="fname" name="nombre" placeholder="Tu nombre..">
           <label for="lname">Apellido</label>
-          <input type="text" id="lname" name="lastname" placeholder="Tu apellido..">
+          <input type="text" id="lname" name="apellido" placeholder="Tu apellido..">
           <label for="country">Ciudad</label>
-          <select id="country" name="Ciudad">
-            <option value="australia">Chihuahua</option>
-            <option value="canada">Juarez</option>
-            <option value="usa">Parral</option>
-            <option value="usa">Delicias</option>
+          <select id="country" name="ciudad">
+            <option value="Chihuahua">Chihuahua</option>
+            <option value="Juarez">Juarez</option>
+            <option value="Parral">Parral</option>
+            <option value="Delicias">Delicias</option>
           </select>
           <label for="subject">Asunto</label>
-          <textarea id="subject" name="subject" placeholder="Escribe algo.." style="height:170px"></textarea>
+          <textarea id="subject" name="asunto" placeholder="Escribe algo.." style="height:170px"></textarea>
           <input type="submit" value="Enviar">
         </form>
+        <!-- </form> -->
+
       </div>
     </div>
   </div>
+
+
 </body>
 </html>
