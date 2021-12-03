@@ -85,7 +85,7 @@ localhost:8888/
 * [Atom]
 * [Node.js (para ejecutr el programa)]
 * [Nano]}
-* docker pull saidsanchez/sitioweb  (link para la imagen de docker)
+* https://hub.docker.com/r/saidsanchez/sitioweb (link para la imagen de docker)
 
 ## Authors:
 
